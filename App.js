@@ -1,3 +1,7 @@
+
+//Make sure this stays at the very top and nothing comes before
+//import 'react-native-gesture-handler';
+
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Alert, StatusBar, Platform} from 'react-native';
 
 

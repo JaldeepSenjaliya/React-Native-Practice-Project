@@ -2,26 +2,57 @@
 //Make sure this stays at the very top and nothing comes before
 //import 'react-native-gesture-handler';
 
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Alert, StatusBar, Platform} from 'react-native';
+import { StyleSheet, View, Text, Pressable, Image, FlatList} from 'react-native';
 
 
+function list() {
+ const items = [1, 2, 3, 4, 5] 
+ }
 
 export default function App() {
 
   const handlePress = () => console.log("Text Pressed!");
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Hello World!</Text>
+    <SafeAreaView style={styles.listContainer}>
+      <FlatList>
+        <View style={styles.locationContainer}>
+          <Text style={styles.locationText}>Compassion Meals</Text>
+        </View>
+        <View style={styles.distanceContainer}>
+          <Text style={styles.distanceText}>2.00mi</Text>
+        </View>
+        <Pressable onPress={handlePress} style={styles.infoBtn}>
+          <View>
+              <Image source={require('')}/>
+          </View>
+        </Pressable>
+
+      </FlatList>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  listContainer: {
+    backgroundColor: 'black'
+  },
+  locationContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
-  }
+    backgroundColor: "black"
+  },
+  locationText: {
+    color: 'white'
+  },
+  distanceContainer: {
+    backgroundColor: 'grey',
+    flex: 0.5
+  },
+  distanceText: {
+    color: '#B2FFC3'
+  },
+  infoBtn: {
+    flex: 0.5
+  },
 });
 
 

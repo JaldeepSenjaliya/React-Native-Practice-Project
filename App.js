@@ -1,73 +1,119 @@
-
 //Make sure this stays at the very top and nothing comes before
 //import 'react-native-gesture-handler';
 
-import { StyleSheet, View, SafeAreaView, Text, Pressable, Image, FlatList} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  Text,
+  Pressable,
+  Image,
+  FlatList,
+} from "react-native";
 
-
-// function list() {
-//  const items = [1, 2, 3, 4, 5] 
-//  }
+import {Home} from './src/screens/Home'
 
 export default function App() {
-
   const handlePress = () => console.log("Text Pressed!");
   return (
-    <SafeAreaView style={styles.listContainer}>
+    <View style={{backgroundColor: '#000000'}}>
+      <View style={styles.listContainer}>
         <View style={styles.locationContainer}>
-          <Text style={styles.locationText}>Compassion Meals</Text>
-       </View>
-       <View style={styles.distanceContainer}>
-          <Text style={styles.distanceText}>2.00mi</Text>
-        </View>    
+          <Text
+            style={styles.locationText}
+            numberOfLines={0}
+            ellipsizeMode="tail"
+          >
+            Compassion Meals
+          </Text>
+        </View>
+        <View style={styles.distanceContainer}>
+          <Text style={styles.distanceText}>0.2 mi</Text>
+        </View>
         <Pressable onPress={handlePress} style={styles.infoBtn}>
           <View>
-              <Image source={require('./assets/info.png')} style={{width: 20, height: 20, tintColor: 'white'}} />
+            <Image
+              source={require("./assets/info.png")}
+              style={{ width: 25, height: 25, tintColor: "white" }}
+            />
           </View>
         </Pressable>
-    </SafeAreaView>
+      </View>
+      <View style={styles.listContainer}>
+        <View style={styles.locationContainer}>
+          <Text
+            style={styles.locationText}
+            numberOfLines={0}
+            ellipsizeMode="tail"
+          >
+            Compassion Meals
+          </Text>
+        </View>
+        <View style={styles.distanceContainer}>
+          <Text style={styles.distanceText}>0.2 mi</Text>
+        </View>
+        <Pressable onPress={handlePress} style={styles.infoBtn}>
+          <View>
+            <Image
+              source={require("./assets/info.png")}
+              style={{ width: 25, height: 25, tintColor: "white" }}
+            />
+          </View>
+        </Pressable>
+      </View>
+      <Home></Home>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   listContainer: {
-    backgroundColor: 'black',
-    flexDirection: 'row'
+    marginTop: 5,
+    backgroundColor: "#232323",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   locationContainer: {
-    //flex: 1,
-    backgroundColor: 'black',
-    paddingLeft: 5,
-    paddingTop: 5,
-    paddingBottom: 5
+    backgroundColor: "#232323",
+    flex: 0.75,
+    marginLeft: 12,
+    marginTop: 20,
+    marginBottom: 20,
+    height: 35,
   },
   locationText: {
-    color: 'white'
+    color: "#ffffff",
+    fontSize: 18,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingRight: 5,
   },
   distanceContainer: {
-    // backgroundColor: 'grey',
-    // paddingLeft: 5,
-    // paddingTop: 5,
-    // paddingBottom: 5
+    flex: 0.14,
+    backgroundColor: "#4F4F4F",
+    borderRadius: 5,
+    marginLeft: 7,
+    marginTop: 22.5,
+    marginBottom: 20,
+    height: 30,
   },
   distanceText: {
-    color: '#B2FFC3',
-    backgroundColor: 'grey',
+    color: "#B2FFC3",
     paddingLeft: 5,
     paddingTop: 5,
-    paddingBottom: 5
-
+    paddingBottom: 5,
+    paddingRight: 5,
   },
   infoBtn: {
-    //flex: 0.5
-    paddingLeft: 10,
-    paddingTop: 5,
-    paddingBottom: 5
+    flex: 0.1,
+    marginLeft: 10,
+    marginTop: 22.5,
+    marginRight: 12,
+    marginBottom: 20,
   },
 });
 
-
-      /* <Text onPress={handlePress}>Hello React Native!</Text>
+/* <Text onPress={handlePress}>Hello React Native!</Text>
       <TouchableOpacity onPress={() => console.log("Text clicked")}>
           <Image source={{
               width: 200, 
